@@ -1,2 +1,2 @@
-# climb-sBTC
-Building open, decentralized pathways for work, trade, and value on sBTC.
+# Trustport
+Redefining payments with open, decentralized rails for trade and everyday transactions.
