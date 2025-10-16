@@ -1,2 +1,2 @@
 # Trustport
-Redefining payments with open, decentralized rails for trade and everyday transactions.
+Empowering global trade with Bitcoin-secured, decentralized payment rails built on Stacks.
