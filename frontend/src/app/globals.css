@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+/* Define custom dark mode variant for Tailwind 4 */
+@variant dark (&:is(.dark *));
+
+/* Light mode (default) */
+:root {
+  --background: 239 239 239; /* #EFEFEF in RGB */
+  --foreground: 23 23 23; /* #171717 in RGB */
+  --light-bg: 239 239 239;
+  --dark-bg: 0 0 0;
+  --dark-gray: 34 34 34; /* #222 */
+  --dark-gray-hue: 51 51 51; /* #333 */
+  --gray-tint: 243 244 246; /* #F3F4F6 */
+  --primary: 99 102 241;
+  --greenlish: #9be77f; /* Indigo-500 as example */
+
+  --gradient-start: #B78BF2;
+  --gradient-end: #A8FF8A;
+}
+
+/* Dark mode */
+.dark {
+  --background: 10 10 10; /* #0a0a0a */
+  --foreground: 237 237 237; /* #ededed */
+}
+
+/* Apply theme to Tailwind */
+@theme {
+  --color-background: rgb(var(--background));
+  --color-foreground: rgb(var(--foreground));
+  --color-light-bg: rgb(var(--light-bg));
+  --color-dark-bg: rgb(var(--dark-bg));
+  --color-greens: var(--greenlish);
+  --color-dark-gray: rgb(var(--dark-gray));
+  --color-dark-gray-hue: rgb(var(--dark-gray-hue));
+  --color-mouve: var(--gradient-start);
+  --color-gray-tint: rgb(var(--gray-tint));
+  --color-primary: rgb(var(--primary));
+  
+  --color-light: 255 255 255; /* white */
+  --color-dark: 0 0 0; /* black */
+  
+
+  --font-poppins:var(--font-poppins);
+  --font-outfit:var(--font-outfit);
+  --font-poltwaski:var(--font-poltwaski);
+
+}
+
+/* Base styles */
+body {
+  background-color: rgb(var(--background));
+  color: rgb(var(--foreground));
+  font-family: var(--font-poppins), Arial, Helvetica, sans-serif;
+
+}
+
+.text-outline {
+  color: transparent;              
+  -webkit-text-stroke: 0.1px #000;  
+}
+
+.dark .text-outline {
+    color: transparent;                
+  -webkit-text-stroke: 0.1px #fff; 
+}
+
+.text-custom-gradient {
+  background: linear-gradient(to right, var(--gradient-start), var(--gradient-end)); 
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@utility text-custom-gradient {
+  background: linear-gradient(to right, var(--gradient-start), var(--gradient-end)); 
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.tm-gradient {
+  background: #AD8D8D;
+}
+
+.dark .tm-gradient {
+  background: linear-gradient(to right, var(--gradient-start) 0%, var(--gradient-end) 100%);
+}
+
+/* Keyframe for pulsing border animation */
+@keyframes pulse-border {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.08);
+  }
+}
+
+/* Only animate in dark mode */
+.dark .animate-pulse-border {
+  animation: pulse-border 2s ease-in-out infinite;
+}
+
+/* No animation in light mode */
+.animate-pulse-border {
+  animation: none;
+  opacity: 0.6;
+}
