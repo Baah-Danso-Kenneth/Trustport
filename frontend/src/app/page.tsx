@@ -1,9 +1,8 @@
+import LandingPage from '@/components/views/landingPage'
 import React from 'react'
 
-function Page() {
-  return (
-    <div>Page</div>
-  )
+function Homee() {
+  return <LandingPage/>
 }
 
-export default Page
+export default Homee
